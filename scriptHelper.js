@@ -1,5 +1,9 @@
 // Write your helper functions here!
 require('isomorphic-fetch');
+//const pilot = document.getElementById('pilotName');
+//const copilot = document.getElementsByName('copilotName');
+//const fuelLevel = document.getElementsByName('fuelLevel');
+//const cargoLevel = document.getElementsByName('cargoMass');
 
 function addDestinationInfo(document, name, diameter, star, distance, moons, imageUrl) {
    // Here is the HTML formatting for our mission target div.
