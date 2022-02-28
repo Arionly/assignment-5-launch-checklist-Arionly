@@ -1,9 +1,12 @@
 // Write your helper functions here!
-require('isomorphic-fetch');
-//const pilot = document.getElementById('pilotName');
-//const copilot = document.getElementsByName('copilotName');
-//const fuelLevel = document.getElementsByName('fuelLevel');
-//const cargoLevel = document.getElementsByName('cargoMass');
+const isomorphic = require ('isomorphic-fetch');
+//const document = document.getElementById('launchForm');
+const pilot = document.getElementById('pilotName');
+const copilot = document.getElementsByName('copilotName');
+const fuelLevel = document.getElementsByName('fuelLevel');
+const cargoLevel = document.getElementsByName('cargoMass');
+const list = document.getElementById('missionTarget');
+
 
 function addDestinationInfo(document, name, diameter, star, distance, moons, imageUrl) {
    // Here is the HTML formatting for our mission target div.
@@ -21,10 +24,32 @@ function addDestinationInfo(document, name, diameter, star, distance, moons, ima
 }
 
 function validateInput(testInput) {
-   
-}
+  // let messages = [];
+    if (pilot.textContent.trim === " " || pilot.textContent == null) {
+       console.log('Text is required');
+       return false;
+        }
+    else if (copilot.textContent.trim === " " || copilot.textContent == null) {
+        console.log('Text is required');
+        return false;
+        }
+    else if (fuelLevel.textContent.trim === " " || fuelLevel.textContent == isNaN){
+        console.log('Numeric data is required');
+        return false;
+        }
+    else if (cargoLevel.textContent.trim === " " || cargoLevel.textContent == isNaN){
+        console.log('Numeric data is required');
+        return false;
+        }
+      else {
+          return true;
+        }
+    }
+
 
 function formSubmission(document, list, pilot, copilot, fuelLevel, cargoLevel) {
+
+
    
 }
 
@@ -40,8 +65,11 @@ async function myFetch() {
 function pickPlanet(planets) {
 }
 
-module.exports.addDestinationInfo = addDestinationInfo;
-module.exports.validateInput = validateInput;
-module.exports.formSubmission = formSubmission;
-module.exports.pickPlanet = pickPlanet; 
-module.exports.myFetch = myFetch;
+module.exports = {
+    addDestinationInfo = addDestinationInfo,
+    validateInput = validateInput,
+    formSubmission = formSubmission,
+    pickPlanet = pickPlanet,
+    myFetch = myFetch,
+    }
+

@@ -1,18 +1,21 @@
 // Write your JavaScript code here!
 
-const { formSubmission, formSubmission } = require("./scriptHelper");
-//const pilotName = document.getElementById('pilotName');
-//const copilotName = document.getElementsByName('copilotName');
+ const scriptHelper = require ("./scriptHelper");
+//const pilot = document.getElementById('pilotName');
+//const copilot = document.getElementsByName('copilotName');
 //const fuelLevel = document.getElementsByName('fuelLevel');
-//const cargoMass = document.getElementsByName('cargoMass');
-
+//const cargoLevel = document.getElementsByName('cargoMass');
+//const document = document.getElementById('launchForm');
+//const list = document.getElementById('missionTarget');
 // error data-testid="testForm"
-window.addEventListener("load", function() {
-    let formSubmission = this.document.querySelector("formSubmission");
-    formSubmission.addEventListener("formSubmit", function(event){
-        event.preventDefault()
-    });
 
+
+window.addEventListener("load", function(event) {
+    //validate form
+    scriptHelper.validateInput();
+    event.preventDefault();        
+    console.log("form prevented from loading");
+//submit form
     
    let listedPlanets;
    // Set listedPlanetsResponse equal to the value returned by calling myFetch()
@@ -27,4 +30,3 @@ window.addEventListener("load", function() {
    
 });
 
-}
