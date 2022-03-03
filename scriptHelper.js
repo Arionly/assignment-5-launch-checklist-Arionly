@@ -56,17 +56,20 @@ function formSubmission(document, list, pilot, copilot, fuelLevel, cargoLevel) {
 async function myFetch() {
     let planetsReturned=[];
 
-    planetsReturned = await fetch(https://handlers.education.launchcode.org/static/planets.json).then( function(response) {
-       Response.result.then(function(result) {
-        const div = document.getElementById("missionTarget") ; 
-       
-           
-       }));
-    };
-       
-    
+    planetsReturned = await fetch("https://handlers.education.launchcode.org/static/planets.json")
+        .then(function(response) {
+            return response.json()
+        })
+        .then(function(data){
+            return data
+           // const div = document.getElementById("missionTarget")
+        })     
+        // fetch('http://example.com/movies.json')
+        // .then(response => response.json())
+        // .then(data => console.log(data));
+        
     return planetsReturned;
-
+}
 
 function pickPlanet(planets) {
 }
