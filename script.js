@@ -10,10 +10,11 @@
 // error data-testid="testForm"
 
 
-window.addEventListener("load", function(event) {
+window.addEventListener("load", function(formSubmission) {
     //validate form
+    //function(event) or (formsubmission) in the preventDefault
     scriptHelper.validateInput();
-    event.preventDefault();        
+    formSubmission.preventDefault();        
     console.log("form prevented from loading");
 //submit form
     
